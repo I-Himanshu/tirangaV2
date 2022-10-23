@@ -42,25 +42,27 @@
          w: 250
          }
          function init() {
-         canvas = document.querySelector(".canvas");
-         canvas.height = window.innerHeight;
-         canvas.width = window.innerWidth;
-         ctx = canvas.getContext("2d");
-         ctx.translate(0, 0);
-         draw();
-         createParticles();
-         animate()
+            canvas = document.querySelector(".canvas");
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            ctx = canvas.getContext("2d");
+            ctx.translate(0, 0);
+            draw();
+            createParticles();
+            animate()
          }
-         window.addEventListener("load", init)
-         window.addEventListener("resize", init)
+         window.addEventListener("load", 
+                                 init)
+         window.addEventListener("resize", 
+                                 init)
          function mousemove(e) {
-         mouse.x = e.touches[0].clientX;
-         mouse.y = e.touches[0].clientY;
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
          }
          
          function mouseend() {
-         mouse.x = undefined;
-         mouse.y = undefined;
+            mouse.x = undefined;
+            mouse.y = undefined;
          }
          window.addEventListener("touchmove", mousemove);
          window.addEventListener("touchend", mouseend);
@@ -79,12 +81,12 @@
          }
          draw() {
          ctx.fillStyle = this.color;
-         for (var i = this.x; i < this.x + this.w; i += 4) {
-         for (var j = this.y; j < this.y + this.h; j += 4) {
+         for (var i = this.x; i < this.x + this.w; i += 7) {
+         for (var j = this.y; j < this.y + this.h; j += 7) {
          PARTICLES.push(new Particle(i, j, this.color))
          }
          }
-         //ctx.fillRect(this.x,this.y,this.w,this.h);
+         
          }
          }
          class Flag {
